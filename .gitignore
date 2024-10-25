@@ -1,52 +1,36 @@
-# Prerequisites
-*.d
+# GitIgnore
+# V0.7 - 25.10.2024
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+# Temporary files
+*.000
+*.bak
+*.bck
+*.kicad_pcb-bak
+*~
+_autosave-*
+*.tmp
+*.FCStd1
 
-# Linker output
-*.ilk
-*.map
-*.exp
+# AutobackupFiles
+*-backups
 
-# Precompiled Headers
-*.gch
-*.pch
+# Netlist files (exported from Eeschema)
+*.net
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
+# Autorouter files (exported from Pcbnew)
+.dsn
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+# Cache file KiCAd
+*fp-info-cache
+*.kicad_prl
+*.kicad_pcb.lck
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+# Exported BOM files
+*.xml
+*.csv
 
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
+# PythonUpload Script LOG
+otaUploadLog.txt
 
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+# FreeCAD
+*.FCBak
