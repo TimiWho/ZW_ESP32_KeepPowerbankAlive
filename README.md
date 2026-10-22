@@ -1,3 +1,45 @@
+# ZW_ESP32_KeepPowerbankAlive
+
+[Kurze Änderungsübersicht](AENDERUNGEN_README_2026-10-21.md)
+
+## 🚀 Powerbank wachhalten – GPIO-Lastimpulse
+
+![Plattform](https://img.shields.io/badge/Plattform-ESP32-blue) ![Schnittstelle](https://img.shields.io/badge/Schnittstelle-GPIO21-orange)
+
+Zwei kurze ESP32-Beispiele erzeugen periodische GPIO-Impulse für eine externe Transistor-Lastschaltung. Damit kann eine Powerbank trotz geringer Grundlast eingeschaltet bleiben.
+
+**Dokumentationsstand:** 21.10.2026 · Branch `master`. Beschreibt den vorhandenen Projektstand; kein neuer Funktionstest am Gerät.
+
+[Quellcode herunterladen](https://github.com/TimiWho/ZW_ESP32_KeepPowerbankAlive/archive/refs/heads/master.zip) · [Ursprüngliche Haupt-README](README_Backup_2026-10-21.md)
+
+---
+
+## 🔌 Ein-/Ausgänge und Timer
+
+| Variante | Ausgang | Intervall | Pulsdauer |
+| --- | --- | --- | --- |
+| arduino-ide/KeepPowerbankAlive.ino | BLINK_GPIO = GPIO21 | 5000 ms gemäß millis()-Vergleich | 50 ms über delay(50) |
+| esp-idf/main/KeepPowerbankAlive.c | BLINK_GPIO = GPIO21 | 9000 ms gemäß Tickvergleich | 50 ms über vTaskDelay |
+
+Die Varianten haben absichtlich unterschiedliche Intervalle. `previousMillis` ist der gespeicherte Zeitstempel und kein weiterer Timer. Eine GPIO-Eingabe, Netzwerkschnittstelle, MQTT-API oder OTA-Funktion ist nicht enthalten.
+
+Die externe Lastschaltung und ihre Dimensionierung sind in der ursprünglichen Dokumentation erläutert. Strombedarf und Abschaltschwelle sind powerbankspezifisch; die dortige Rechnung bezieht sich auf das beschriebene Beispiel. Quellen und GPL-Lizenz bleiben erhalten.
+
+## 🐞 GitHub-Issues
+
+**Abgleich:** 21.10.2026. Status aus GitHub; diese Übersicht ändert keine Issues.
+
+Zum Abgleichzeitpunkt sind keine offenen GitHub-Issues vorhanden.
+
+In diesem Repository sind zum Abgleichzeitpunkt keine GitHub-Issues vorhanden.
+
+## 🗂️ Originaldokumentation, Schaltung und Lizenz
+
+Die ursprünglichen technischen Erläuterungen, Quellenangaben und Autorenhinweise bleiben nachfolgend erhalten. Maßgeblich für konkrete Pin- und Timerwerte ist der oben beschriebene Repository-Stand.
+
+<details>
+<summary>Originaldokumentation, Schaltung und Lizenz anzeigen</summary>
+
 # ESP32_KeepPowerbankAlive
 
 
@@ -135,3 +177,7 @@ For Arduino-IDE download the file and compile with IDE: [LINK](https://github.co
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 The program code is licensed under GNU General Public License 3. Take a look at the [license file](https://github.com/Staubgeborener/ESP32_KeepPowerbankAlive/blob/master/LICENSE) for more informations.
+
+
+</details>
+
